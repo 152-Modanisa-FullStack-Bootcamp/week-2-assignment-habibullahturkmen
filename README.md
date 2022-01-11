@@ -25,6 +25,10 @@ Do not make a responsive design.
 
 ![HomePage](./pictures/youtube-home.png)
 
+Solution
+
+![HomePage](./pictures/home.png)
+
 ## Favorite page
 
 For the favorite page, You need to design a page as seen in the picture below.
@@ -32,3 +36,7 @@ For the favorite page, You need to design a page as seen in the picture below.
 Favorite page should list the videos whose favorite field are set to true in the data.
 
 ![HomePage](./pictures/favorites-page.png)
+
+Solution
+
+![HomePage](./pictures/favorites.png)
