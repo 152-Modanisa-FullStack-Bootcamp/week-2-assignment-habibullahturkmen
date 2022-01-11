@@ -17,6 +17,10 @@ https://my-json-server.typicode.com/modanisa/bootcamp-video-db/videos
 
 Watch page should display the id of video. You are not supposed to do any design for this page.
 
+Solution
+
+![HomePage](./pictures/watch.png)
+
 ## Home page
 
 You need to design a homepage is seen in the picture below.

@@ -1,9 +1,10 @@
 <template>
   <div class="main-container">
     <Header></Header>
+    <h2>The ID for this video is {{ this.$route.params.videoid }}</h2>
     <!-- Video 3 and 6 does not support embed, so I printed the youtube address on the screen instead -->
-    <h3 v-if="$route.params.videoid == 3">Go to {{ this.videos[2].videoAddress }}</h3>
-    <h3 v-else-if="$route.params.videoid == 6">Go to {{ this.videos[5].videoAddress }}</h3>
+    <h3 v-if="$route.params.videoid == 3">Go to: {{ this.videos[2].videoAddress }}</h3>
+    <h3 v-else-if="$route.params.videoid == 6">Go to: {{ this.videos[5].videoAddress }}</h3>
     <!--  Other than video 3 and 6 will be embedded in this page because they support "embed".  -->
     <div v-else id="video-payer">
       <iframe :src="url"></iframe>
@@ -59,6 +60,10 @@ export default {
 iframe {
   width: 1200px;
   height: 700px;
-  margin-top: 80px;
+  margin-top: 10px;
+}
+
+h4 {
+  margin-top: 30px;
 }
 </style>
