@@ -1,7 +1,7 @@
 <template>
   <div class="main-container">
     <Header></Header>
-    <h2>The ID for this video is {{ this.$route.params.videoid }}</h2>
+    <h2>The ID for this video is {{ this.$route.query.id }}</h2>
     <!-- Video 3 and 6 does not support embed, so I printed the youtube address on the screen instead -->
     <h3 v-if="$route.params.videoid == 3">Go to: {{ this.videos[2].videoAddress }}</h3>
     <h3 v-else-if="$route.params.videoid == 6">Go to: {{ this.videos[5].videoAddress }}</h3>
@@ -24,7 +24,7 @@ export default {
   methods: {
     getWatch() {
       for (let i = 0; i < this.videos.length; i++) {
-        if (this.videos[i].id === Number(this.$route.params.videoid)) {
+        if (this.videos[i].id === Number(this.$route.query.id)) {
           let url = this.videos[i].videoAddress;
           url = url.replace('watch?v=', 'embed/')
           return url;
@@ -41,8 +41,6 @@ export default {
   async mounted() {
     const response = await axios.get("https://my-json-server.typicode.com/modanisa/bootcamp-video-db/videos");
     this.videos = response.data;
-    console.log(this.videos);
-    console.log(this.getWatch());
     this.url = this.getWatch();
   }
 }

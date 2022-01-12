@@ -36,7 +36,7 @@ export default {
   },
   methods: {
     navigateToVideo() {
-      this.$router.push(`/watch/${this.video.id}`);
+      this.$router.push({ path: 'watch', query: { id: this.video.id }});
     }
   }
 }
@@ -99,7 +99,6 @@ settings for the details div which is also using flexbox
   flex-direction: column;
   width: 324px;
   height: 70px;
-  /*justify-content: space-between;*/
 }
 
 #details > h4 {

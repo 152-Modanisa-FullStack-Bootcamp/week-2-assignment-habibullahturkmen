@@ -12,7 +12,7 @@ const router = new vueRouter({
         {path: "/" , component: Home},
         {path: "/home", component: Home},
         {path: "/favorites/:userid", component: Favorites},
-        {path: "/watch/:videoid", component: Watch}
+        {path: "/watch", component: Watch}
     ]
 });
 

@@ -38,7 +38,7 @@ export default {
   },
   methods: {
     navigateToVideo() {
-      this.$router.push(`/watch/${this.video.id}`);
+      this.$router.push({ path: '/watch', query: { id: this.video.id }});
     }
   }
 }
@@ -58,7 +58,6 @@ this is the main container for every single video and it's using flexbox
   flex-direction: row;
   width: 1000px;
   height: 200px;
-  /*border: 2px solid black;*/
   margin-bottom: 50px;
 }
 
