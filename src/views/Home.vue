@@ -13,7 +13,6 @@
 <script>
 import Header from "../components/Header";
 import Video from "../components/Video";
-import axios from "axios";
 
 export default {
   name: "Home",
@@ -21,15 +20,13 @@ export default {
     Header: Header,
     Video: Video
   },
-  data() {
-    return {
-      videos: []
+  computed: {
+    videos() {
+      return this.$store.state.videos
     }
   },
-  async mounted() {
-    const response = await axios.get("https://my-json-server.typicode.com/modanisa/bootcamp-video-db/videos");
-    this.videos = response.data;
-    console.log(this.videos)
+  mounted() {
+    this.$store.dispatch("getVideos");
   }
 }
 </script>

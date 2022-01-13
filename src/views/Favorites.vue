@@ -13,7 +13,6 @@
 <script>
 import Header from "../components/Header";
 import FavoriteVideo from "../components/FavoriteVideo";
-import axios from "axios";
 
 export default {
   name: "Favorite",
@@ -21,20 +20,13 @@ export default {
     Header: Header,
     FavoriteVideo: FavoriteVideo
   },
-  data() {
-    return {
-      videos: []
-    }
-  },
   computed: {
     getFavorites() {
-      return this.videos.filter(n => n.favorite === true);
+      return this.$store.state.videos.filter(n => n.favorite === true);
     }
   },
-  async mounted() {
-    const response = await axios.get("https://my-json-server.typicode.com/modanisa/bootcamp-video-db/videos");
-    this.videos = response.data;
-    console.log(this.videos);
+  mounted() {
+    this.$store.dispatch("getVideos");
   }
 }
 </script>
