@@ -1,4 +1,5 @@
 # Bootcamp Week 2 Assignment - Vuex Version
+[Main Version is here](https://github.com/152-Modanisa-FullStack-Bootcamp/week-2-assignment-habibullahturkmen/tree/main)
 
 There are 3 pages you need to design: main, favorite and watch page respectively. You need to use router for displaying the pages. When user clicks to the favorite button, you should
 use "bootcamp" as param.
