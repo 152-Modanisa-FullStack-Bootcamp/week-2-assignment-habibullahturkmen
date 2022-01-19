@@ -9,7 +9,11 @@ const store = new Vuex.Store({
     state: {
         videos: []
     },
-    getters: {},
+    getters: {
+        getFavorites() {
+            return store.state.videos.filter(n => n.favorite === true);
+        }
+    },
     actions: {
         getVideos({ commit }) {
             axios.get(url)

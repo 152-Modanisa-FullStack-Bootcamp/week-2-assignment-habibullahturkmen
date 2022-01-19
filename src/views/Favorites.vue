@@ -13,6 +13,7 @@
 <script>
 import Header from "../components/Header";
 import FavoriteVideo from "../components/FavoriteVideo";
+import {mapGetters} from "vuex";
 
 export default {
   name: "Favorite",
@@ -21,9 +22,7 @@ export default {
     FavoriteVideo: FavoriteVideo
   },
   computed: {
-    getFavorites() {
-      return this.$store.state.videos.filter(n => n.favorite === true);
-    }
+    ...mapGetters(["getFavorites"])
   },
   mounted() {
     this.$store.dispatch("getVideos");
